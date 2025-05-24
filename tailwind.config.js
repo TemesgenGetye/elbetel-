@@ -1,0 +1,72 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        purple: {
+          50: '#f8f5ff',
+          100: '#eee6fe',
+          200: '#ddcefd',
+          300: '#c4a6fb',
+          400: '#a575f9',
+          500: '#8a63d2',
+          600: '#7e42ea',
+          700: '#6933d0',
+          800: '#5b2daa',
+          900: '#4a2288',
+          950: '#2d1461',
+        },
+        teal: {
+          50: '#effcfb',
+          100: '#d6f5f4',
+          200: '#afebeb',
+          300: '#7adada',
+          400: '#38b2ac',
+          500: '#2da4a1',
+          600: '#218384',
+          700: '#1d696c',
+          800: '#1d5659',
+          900: '#1c484a',
+          950: '#0c2b2e',
+        },
+        coral: {
+          50: '#fff1f1',
+          100: '#ffe1e1',
+          200: '#ffc7c7',
+          300: '#ffa0a0',
+          400: '#ff6b6b',
+          500: '#f83b3b',
+          600: '#e51e1e',
+          700: '#c11414',
+          800: '#a01414',
+          900: '#841818',
+          950: '#480707',
+        },
+      },
+      fontFamily: {
+        sans: [
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
+    },
+  },
+  plugins: [],
+};
