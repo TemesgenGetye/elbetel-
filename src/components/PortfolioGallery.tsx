@@ -1,17 +1,26 @@
-import React, { useState, useEffect, useRef } from 'react';
-import SectionTitle from './SectionTitle';
-import { portfolioData, PortfolioItem, PortfolioCategory } from '../data/portfolioData';
+import React, { useState, useEffect, useRef } from "react";
+import SectionTitle from "./SectionTitle";
+import {
+  portfolioData,
+  PortfolioItem,
+  PortfolioCategory,
+} from "../data/portfolioData";
 
 const PortfolioGallery: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<PortfolioCategory | 'all'>('all');
-  const [visibleItems, setVisibleItems] = useState<PortfolioItem[]>(portfolioData);
+  const [activeCategory, setActiveCategory] = useState<
+    PortfolioCategory | "all"
+  >("all");
+  const [visibleItems, setVisibleItems] =
+    useState<PortfolioItem[]>(portfolioData);
   const galleryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (activeCategory === 'all') {
+    if (activeCategory === "all") {
       setVisibleItems(portfolioData);
     } else {
-      setVisibleItems(portfolioData.filter(item => item.category === activeCategory));
+      setVisibleItems(
+        portfolioData.filter((item) => item.category === activeCategory)
+      );
     }
   }, [activeCategory]);
 
@@ -20,15 +29,15 @@ const PortfolioGallery: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'scale-100');
-            entry.target.classList.remove('opacity-0', 'scale-95');
+            entry.target.classList.add("opacity-100", "scale-100");
+            entry.target.classList.remove("opacity-0", "scale-95");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = galleryRef.current?.querySelectorAll('.portfolio-item');
+    const elements = galleryRef.current?.querySelectorAll(".portfolio-item");
     elements?.forEach((element) => {
       observer.observe(element);
     });
@@ -40,7 +49,12 @@ const PortfolioGallery: React.FC = () => {
     };
   }, [visibleItems]);
 
-  const categories: PortfolioCategory[] = ['TikTok Videos', 'Social Media Campaigns', 'Video Editing', 'HR Projects'];
+  const categories: PortfolioCategory[] = [
+    "TikTok Videos",
+    "Digital Marketing And Content",
+    "Video Editing",
+    "HR Projects",
+  ];
 
   return (
     <section id="portfolio" className="py-20 bg-white dark:bg-gray-900">
@@ -53,11 +67,11 @@ const PortfolioGallery: React.FC = () => {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <button
-            onClick={() => setActiveCategory('all')}
+            onClick={() => setActiveCategory("all")}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeCategory === 'all'
-                ? 'bg-purple-600 text-white'
-                : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'
+              activeCategory === "all"
+                ? "bg-purple-600 text-white"
+                : "bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700"
             }`}
           >
             All Work
@@ -69,8 +83,8 @@ const PortfolioGallery: React.FC = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-purple-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700'
+                  ? "bg-purple-600 text-white"
+                  : "bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700"
               }`}
             >
               {category}

@@ -9,59 +9,59 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
-    date: 'Jan 2023 - Present',
-    title: 'HR Specialist',
-    company: 'Tech Innovations Inc.',
-    category: 'HR',
+    date: "Jan 2023 - Present",
+    title: "HR Specialist",
+    company: "NOAH Real Estate",
+    category: "HR",
     description:
-      'Managed full-cycle recruitment and onboarding processes while implementing employee engagement initiatives.',
+      "Handled full-cycle recruitment, onboarding, and employee development programs while contributing to organizational HR strategies.",
     achievements: [
-      'Reduced time-to-hire by 30% through streamlined recruitment processes',
-      'Improved employee retention rate by 15% with targeted engagement programs',
-      'Successfully onboarded 25+ new employees in a remote work environment',
-      'Developed and implemented performance review system improving goal alignment by 40%'
+      "Streamlined hiring process, reducing time-to-fill by 30%",
+      "Enhanced employee satisfaction through structured feedback systems",
+      "Onboarded and trained 30+ employees across departments",
+      "Supported performance evaluations and internal HR audits",
     ],
   },
   {
-    date: 'Mar 2023 - Present',
-    title: 'Social Media Manager',
-    company: 'Creative Agency',
-    category: 'Social Media',
+    date: "Mar 2023 - Present",
+    title: "Social Media Manager",
+    company: "The PS Market",
+    category: "Social Media",
     description:
-      'Developed and executed comprehensive social media strategies across multiple platforms.',
+      "Led and executed multi-platform social media strategies to increase brand visibility and engagement.",
     achievements: [
-      'Grew Instagram following by 120% in 9 months through targeted content campaigns',
-      'Achieved 45% increase in engagement rate across all platforms',
-      'Managed $15,000 monthly ad budget with 3.5x ROI',
-      'Created viral campaign that reached 1.2 million impressions'
+      "Boosted Instagram followers by 130% with targeted campaigns",
+      "Increased monthly engagement rate by over 50%",
+      "Planned and managed seasonal campaigns with measurable ROI",
+      "Established consistent brand voice and content themes",
     ],
   },
   {
-    date: 'May 2023 - Present',
-    title: 'TikTok Content Host',
-    company: 'TrendWave Media',
-    category: 'Content Creation',
+    date: "May 2023 - Present",
+    title: "TikTok Content Host",
+    company: "Personal Brand / Freelance / The PS Market",
+    category: "Content Creation",
     description:
-      'Hosted weekly TikTok series focused on career development and professional growth.',
+      "Created and hosted TikTok content focused on career tips, lifestyle, and industry trends with consistent audience engagement.",
     achievements: [
-      'Built audience of 50,000+ followers in 8 months',
-      'Videos consistently achieving 150,000+ views',
-      'Collaborated with 15+ brands for sponsored content',
-      '75% audience retention rate on long-form videos'
+      "Built TikTok following of 50,000+ users in under a year",
+      "Created viral videos with over 150,000+ views regularly",
+      "Collaborated with multiple brands for influencer marketing",
+      "Maintained 75%+ audience retention rate on long-form content",
     ],
   },
   {
-    date: 'Jun 2023 - Present',
-    title: 'Video Editor & Content Creator',
-    company: 'Freelance',
-    category: 'Content Creation',
+    date: "Jun 2023 - Present",
+    title: "Digital Marketer & Content Creator",
+    company: "The PS Market",
+    category: "Content Creation",
     description:
-      'Created and edited engaging video content for businesses and personal brands.',
+      "Designed and executed digital marketing strategies while producing content for social growth and product awareness.",
     achievements: [
-      'Produced 100+ videos across various social media platforms',
-      'Developed signature editing style recognized by clients and followers',
-      'Reduced turnaround time by 40% while maintaining quality',
-      'Implemented SEO strategies resulting in 85% increase in organic discovery'
+      "Created over 100 digital assets including videos, reels, and ads",
+      "Improved social media reach by 90% through SEO and trends",
+      "Developed a content calendar to optimize posting schedules",
+      "Increased product inquiries through high-converting campaigns",
     ],
   },
 ];

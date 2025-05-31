@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import ExperienceTimeline from './components/ExperienceTimeline';
-import SkillsShowcase from './components/SkillsShowcase';
-import PortfolioGallery from './components/PortfolioGallery';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import LoadingScreen from './components/LoadingScreen';
-import CompanyLogos from './components/CompanyLogos';
-import TikTokShowcase from './components/TikTokShowcase';
+import React, { useEffect } from "react";
+import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
+import ExperienceTimeline from "./components/ExperienceTimeline";
+import SkillsShowcase from "./components/SkillsShowcase";
+import PortfolioGallery from "./components/PortfolioGallery";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
+import CompanyLogos from "./components/CompanyLogos";
+import TikTokShowcase from "./components/TikTokShowcase";
 
 function App() {
   useEffect(() => {
-    document.title = 'Elbetel Ashenafi Tola | Portfolio';
+    document.title = "Elbetel Ashenafi Tola | Portfolio";
 
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       @keyframes blob {
         0% {
@@ -57,7 +57,7 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <CompanyLogos />
+        {/* <CompanyLogos /> */}
         <TikTokShowcase />
         <ExperienceTimeline />
         <SkillsShowcase />

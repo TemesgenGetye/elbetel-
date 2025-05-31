@@ -1,6 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Twitter } from 'lucide-react';
-import SectionTitle from './SectionTitle';
+import React, { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Linkedin,
+  Instagram,
+  MessageCircle,
+} from "lucide-react";
+import SectionTitle from "./SectionTitle";
 
 interface FormData {
   name: string;
@@ -11,10 +20,10 @@ interface FormData {
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -27,8 +36,8 @@ const ContactSection: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
           }
         });
       },
@@ -44,11 +53,11 @@ const ContactSection: React.FC = () => {
     };
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
-    // Clear error when user types
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -56,54 +65,40 @@ const ContactSection: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-    
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = "Enter a valid email";
     }
-    
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    }
-    
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-    
+    if (!validateForm() || !formRef.current) return;
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+
+    emailjs
+      .sendForm(
+        "your_service_id",
+        "your_template_id",
+        formRef.current,
+        "your_public_key"
+      )
+      .then(() => {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      })
+      .catch(() => {
+        setIsSubmitting(false);
+        alert("Failed to send message. Please try again later.");
       });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
   };
 
   return (
@@ -125,36 +120,55 @@ const ContactSection: React.FC = () => {
                 Contact Information
               </h3>
               <p className="text-purple-200">
-                Feel free to reach out to me! I'll get back to you as soon as possible.
+                Feel free to reach out to me! I'll get back to you as soon as
+                possible.
               </p>
             </div>
-            
+
             <div className="p-8">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                  <a
+                    href="tel:+251954879192"
+                    className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors duration-200"
+                    aria-label="Call phone number"
+                  >
                     <Phone className="w-5 h-5" />
-                  </div>
+                  </a>
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                       Phone
                     </h4>
-                    <p className="text-gray-900 dark:text-white">+1 (555) 123-4567</p>
+                    <a
+                      href="tel:+251954879192"
+                      className="text-gray-900 dark:text-white hover:underline"
+                    >
+                      +251 95 487 9192
+                    </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                  <a
+                    href="mailto:ashenafielbetel@gmail.com"
+                    className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors duration-200"
+                    aria-label="Send email"
+                  >
                     <Mail className="w-5 h-5" />
-                  </div>
+                  </a>
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                       Email
                     </h4>
-                    <p className="text-gray-900 dark:text-white">hello@elbeteltola.com</p>
+                    <a
+                      href="mailto:ashenafielbetel@gmail.com"
+                      className="text-gray-900 dark:text-white hover:underline"
+                    >
+                      ashenafielbetel@gmail.com
+                    </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
                     <MapPin className="w-5 h-5" />
@@ -163,39 +177,47 @@ const ContactSection: React.FC = () => {
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                       Location
                     </h4>
-                    <p className="text-gray-900 dark:text-white">San Francisco, California</p>
+                    <p className="text-gray-900 dark:text-white">
+                      Addis Ababa, Ethiopia
+                    </p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8">
                 <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
                   Social Media
                 </h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/elbetel-ashenafi-049bb5229/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/30 dark:hover:text-purple-400 transition-colors duration-300"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/elbetelashenafi?igsh=NTRpMDJlb3FpNWtx"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/30 dark:hover:text-purple-400 transition-colors duration-300"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://t.me/ElbiiA"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-purple-100 hover:text-purple-600 dark:hover:bg-purple-900/30 dark:hover:text-purple-400 transition-colors duration-300"
                   >
-                    <Twitter className="w-5 h-5" />
+                    <MessageCircle className="w-5 h-5" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -206,14 +228,13 @@ const ContactSection: React.FC = () => {
                 Thank you for your message! I'll get back to you soon.
               </div>
             )}
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                  Your Name
+                  Name
                 </label>
                 <input
                   type="text"
@@ -221,26 +242,21 @@ const ContactSection: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${
-                    errors.name
-                      ? 'border-red-500 dark:border-red-500'
-                      : 'border-gray-300 dark:border-gray-700'
-                  } focus:outline-none focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
-                  placeholder="John Doe"
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 ${
+                    errors.name ? "border-gray-500" : ""
+                  }`}
+                  autoComplete="off"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                    {errors.name}
-                  </p>
+                  <p className="text-gray-500 text-xs mt-1">{errors.name}</p>
                 )}
               </div>
-              
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                  Your Email
+                  Email
                 </label>
                 <input
                   type="email"
@@ -248,25 +264,20 @@ const ContactSection: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${
-                    errors.email
-                      ? 'border-red-500 dark:border-red-500'
-                      : 'border-gray-300 dark:border-gray-700'
-                  } focus:outline-none focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
-                  placeholder="john@example.com"
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 ${
+                    errors.email ? "border-gray-500" : ""
+                  }`}
+                  autoComplete="off"
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                    {errors.email}
-                  </p>
+                  <p className="text-gray-500 text-xs mt-1">{errors.email}</p>
                 )}
               </div>
             </div>
-            
-            <div className="mb-6">
+            <div className="mt-6">
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Subject
               </label>
@@ -276,52 +287,41 @@ const ContactSection: React.FC = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.subject
-                    ? 'border-red-500 dark:border-red-500'
-                    : 'border-gray-300 dark:border-gray-700'
-                } focus:outline-none focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
-                placeholder="How can I help you?"
+                className={`w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 ${
+                  errors.subject ? "border-gray-500" : ""
+                }`}
+                autoComplete="off"
               />
               {errors.subject && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                  {errors.subject}
-                </p>
+                <p className="text-gray-500 text-xs mt-1">{errors.subject}</p>
               )}
             </div>
-            
-            <div className="mb-6">
+            <div className="mt-6">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
               >
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.message
-                    ? 'border-red-500 dark:border-red-500'
-                    : 'border-gray-300 dark:border-gray-700'
-                } focus:outline-none focus:ring-2 focus:ring-purple-600 dark:focus:ring-purple-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none`}
-                placeholder="Your message here..."
-              ></textarea>
+                rows={5}
+                className={`w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 ${
+                  errors.message ? "border-gray-500" : ""
+                }`}
+              />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                  {errors.message}
-                </p>
+                <p className="text-gray-500 text-xs mt-1">{errors.message}</p>
               )}
             </div>
-            
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium flex items-center justify-center transition-all duration-300 ${
-                isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+              className={`mt-8 px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium flex items-center justify-center transition-all duration-300 ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
               }`}
             >
               {isSubmitting ? (

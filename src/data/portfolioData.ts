@@ -1,4 +1,8 @@
-export type PortfolioCategory = 'TikTok Videos' | 'Social Media Campaigns' | 'Video Editing' | 'HR Projects';
+export type PortfolioCategory =
+  | "TikTok Videos"
+  | "Digital Marketing And Content"
+  | "Video Editing"
+  | "HR Projects";
 
 export interface PortfolioItem {
   title: string;
@@ -11,81 +15,59 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    title: 'Career Growth TikTok Series',
-    category: 'TikTok Videos',
-    description: 'Weekly series providing career advice and professional growth tips for young professionals.',
-    imageUrl: 'https://images.pexels.com/photos/5967929/pexels-photo-5967929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: 'https://www.tiktok.com/',
-    stats: {
-      'Views': '1.2M+',
-      'Followers': '50K+',
-      'Engagement': '8.5%',
-      'Videos': '48'
-    }
+    title: "PS Market Campaign – Video 1",
+    category: "TikTok Videos",
+    description:
+      "Promotional TikTok video for PS Market showcasing featured products with engaging visuals and narration.",
+    imageUrl: "./Tik.png",
+    link: "https://www.tiktok.com/@the_ps_market/video/7509426071595486520",
   },
   {
-    title: 'Tech Brand Instagram Growth',
-    category: 'Social Media Campaigns',
-    description: 'Comprehensive Instagram strategy that increased follower growth and engagement for a tech startup.',
-    imageUrl: 'https://images.pexels.com/photos/35177/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: 'https://www.instagram.com/',
-    stats: {
-      'Growth': '120%',
-      'Engagement': '45%',
-      'Reach': '250K+',
-      'ROI': '3.5x'
-    }
+    title: "PS Market Campaign – Video 2",
+    category: "TikTok Videos",
+    description:
+      "Creative TikTok ad highlighting daily deals and offers for The PS Market.",
+    imageUrl: "./Tik1.png",
+    link: "https://www.tiktok.com/@the_ps_market/video/7477177001212759302",
   },
   {
-    title: 'Product Launch Video Series',
-    category: 'Video Editing',
-    description: 'Edited and produced a series of product launch videos with a cohesive visual style and narrative.',
-    imageUrl: 'https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: 'https://www.youtube.com/',
-    stats: {
-      'Videos': '12',
-      'Views': '80K+',
-      'Conversions': '15%',
-      'Avg Watch': '2:45'
-    }
+    title: "PS Market Campaign – Video 3",
+    category: "TikTok Videos",
+    description:
+      "Engaging product-focused TikTok video campaign designed to increase awareness and drive conversions.",
+    imageUrl: "./Tik2.png",
+    link: "https://www.tiktok.com/@the_ps_market/video/7492113303980756229",
   },
   {
-    title: 'Remote Onboarding Program',
-    category: 'HR Projects',
-    description: 'Developed and implemented a comprehensive remote employee onboarding program.',
-    imageUrl: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: '#',
-    stats: {
-      'Employees': '25+',
-      'Satisfaction': '95%',
-      'Retention': '92%',
-      'Time Saved': '40%'
-    }
+    title: "Instagram Product Highlights",
+    category: "Digital Marketing And Content",
+    description:
+      "Instagram post featuring top-selling products with curated visuals and compelling captions for The PS Market.",
+    imageUrl: "./Inst.png",
+    link: "https://www.instagram.com/p/DECDcjtMMnv/",
   },
   {
-    title: 'Beauty Brand TikTok Campaign',
-    category: 'Social Media Campaigns',
-    description: 'Viral TikTok campaign for a beauty brand featuring user-generated content and influencer partnerships.',
-    imageUrl: 'https://images.pexels.com/photos/3373716/pexels-photo-3373716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: 'https://www.tiktok.com/',
-    stats: {
-      'Impressions': '1.5M+',
-      'UGC Videos': '350+',
-      'Sales Increase': '65%',
-      'New Followers': '45K+'
-    }
+    title: "Misseso Homes Promo Videos",
+    category: "Digital Marketing And Content",
+    description:
+      "Video editing and social media management for Misseso Homes — focused on promoting real estate listings.",
+    imageUrl: "./mese.png", // Replace with actual thumbnail if you have it
+    link: "https://drive.google.com/file/d/1V_Rc9Of2lapVLK5qLKV6-EyZJyLItIxf/view?usp=sharing&t=32",
   },
   {
-    title: 'Corporate Training Videos',
-    category: 'Video Editing',
-    description: 'Series of professional development videos for corporate training and employee education.',
-    imageUrl: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    link: 'https://www.youtube.com/',
-    stats: {
-      'Videos': '18',
-      'Completion Rate': '87%',
-      'Knowledge Retention': '92%',
-      'Feedback Score': '4.8/5'
-    }
+    title: "DSTV Series: እንደ አንድ (Edited)",
+    category: "Video Editing",
+    description:
+      "Edited a drama series aired on DSTV titled 'እንደ አንድ', contributing to episode visuals and pacing.",
+    imageUrl: "./DSTV.jpg", // Replace with actual movie scene image if available
+    link: "#",
+  },
+  {
+    title: "HR Support – NOAH Real Estate",
+    category: "HR Projects",
+    description:
+      "Assisted HR operations at NOAH Real Estate, contributing to employee onboarding and document processing.",
+    imageUrl: "./noah.jpg", // Replace with your actual photo once uploaded
+    link: "#",
   },
 ];
