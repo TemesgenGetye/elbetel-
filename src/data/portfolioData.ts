@@ -68,6 +68,6 @@ export const portfolioData: PortfolioItem[] = [
     description:
       "Assisted HR operations at NOAH Real Estate, contributing to employee onboarding and document processing.",
     imageUrl: "./noah.jpg", // Replace with your actual photo once uploaded
-    link: "#",
+    link: "https://drive.google.com/file/d/1zg5p8Mcg2bBabSDavg04vEnl13txkUW0/view?usp=sharing",
   },
 ];
