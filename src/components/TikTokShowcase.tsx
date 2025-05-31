@@ -48,7 +48,13 @@ const TikTokShowcase: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative w-[375px] h-[765px] bg-[#444242] rounded-[55px] shadow-3xl transform rotate-[15deg]"
+            className="relative 
+             
+            w-[340px] h-[750px] m-auto
+            
+            md:h-[790px] md:w-[375px]
+            
+            bg-[#444242] rounded-[55px] shadow-3xl transform rotate-[15deg]"
             style={{
               boxShadow:
                 "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset",
