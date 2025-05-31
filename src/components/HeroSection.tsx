@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
 
       <a
         href="#experience"
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 animate-bounce"
+        className="absolute bottom-3 mb-12 left-1/2 transform -translate-x-1/2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 animate-bounce"
         aria-label="Scroll down"
       >
         <ChevronDown size={32} />
