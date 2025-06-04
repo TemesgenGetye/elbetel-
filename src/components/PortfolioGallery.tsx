@@ -221,6 +221,32 @@ const PortfolioGallery: React.FC = () => {
                     title={selectedItem.title}
                   />
                 ) : null;
+              } else if (
+                link.includes("youtube.com") ||
+                link.includes("youtu.be")
+              ) {
+                // YouTube embed
+                let videoId = null;
+                if (link.includes("youtube.com")) {
+                  try {
+                    const url = new URL(link);
+                    videoId = url.searchParams.get("v");
+                  } catch {
+                    /* ignore error */
+                  }
+                } else if (link.includes("youtu.be")) {
+                  videoId = link.split("youtu.be/")[1]?.split(/[?&]/)[0];
+                }
+                return videoId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    className="w-full rounded mb-4"
+                    style={{ minHeight: "400px", height: "500px" }}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title={selectedItem.title}
+                  />
+                ) : null;
               } else {
                 // Default: show image
                 return (

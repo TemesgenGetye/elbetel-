@@ -60,7 +60,7 @@ export const portfolioData: PortfolioItem[] = [
     description:
       "Edited a drama series aired on DSTV titled 'እንደ አንድ', contributing to episode visuals and pacing.",
     imageUrl: "./DSTV.jpg", // Replace with actual movie scene image if available
-    link: "./film.mp4",
+    link: "https://www.youtube.com/watch?v=w2_VNeLO1Ys",
   },
 
   {
@@ -69,7 +69,7 @@ export const portfolioData: PortfolioItem[] = [
     description:
       "Edited a drama series aired on DSTV titled 'እንደ አንድ', contributing to episode visuals and pacing.",
     imageUrl: "./film2.png", // Replace with actual movie scene image if available
-    link: "./film.mp4",
+    link: "https://www.youtube.com/watch?v=w2_VNeLO1Ys",
   },
 
   {
