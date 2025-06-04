@@ -60,7 +60,51 @@ export const portfolioData: PortfolioItem[] = [
     description:
       "Edited a drama series aired on DSTV titled 'እንደ አንድ', contributing to episode visuals and pacing.",
     imageUrl: "./DSTV.jpg", // Replace with actual movie scene image if available
-    link: "#",
+    link: "./film.mp4",
+  },
+
+  {
+    title: "DSTV Series: እንደ አንድ (Edited)",
+    category: "Video Editing",
+    description:
+      "Edited a drama series aired on DSTV titled 'እንደ አንድ', contributing to episode visuals and pacing.",
+    imageUrl: "./film2.png", // Replace with actual movie scene image if available
+    link: "./film.mp4",
+  },
+
+  {
+    title: "Misseso Homes Promo Videos",
+    description:
+      "Video editing and social media management for Misseso Homes — focused on promoting real estate listings.",
+    category: "Video Editing",
+    imageUrl: "./p4.png", // Replace with actual movie scene image if available
+    link: "vid4.mp4",
+  },
+  {
+    title: "PS Market Campaign",
+    category: "Video Editing",
+    description:
+      "Edited a tiktok video campaign for PS Market, showcasing daily deals and offers.",
+    imageUrl: "./o1.png", // Replace with actual movie scene image if available
+    link: "./vid1.mp4",
+  },
+
+  {
+    title: "PS Market Campaign",
+    category: "Video Editing",
+    description:
+      "Edited a ps market video campaign, showcasing daily deals and offers.",
+    imageUrl: "./p2.png", // Replace with actual movie scene image if available
+    link: "./vid2.mp4",
+  },
+
+  {
+    title: "PS Market Campaign",
+    category: "Video Editing",
+    description:
+      "Edited a tiktok video campaign for PS Market, showcasing daily deals and offers.",
+    imageUrl: "./p3.png", // Replace with actual movie scene image if available
+    link: "./vid3.mp4",
   },
   {
     title: "HR Support – NOAH Real Estate",
