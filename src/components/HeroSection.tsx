@@ -14,9 +14,9 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between">
           <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-            <h2 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
+            <h2 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4 mt-4">
               Hello, I'm
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
