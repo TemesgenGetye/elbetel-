@@ -2,6 +2,7 @@ export type PortfolioCategory =
   | "TikTok Videos"
   | "Digital Marketing And Content"
   | "Video Editing"
+  | "Social Media Hosting & Management"
   | "HR Projects";
 
 export interface PortfolioItem {
@@ -113,5 +114,30 @@ export const portfolioData: PortfolioItem[] = [
       "Assisted HR operations at NOAH Real Estate, contributing to employee onboarding and document processing.",
     imageUrl: "./noah.jpg", // Replace with your actual photo once uploaded
     link: "https://drive.google.com/file/d/1zg5p8Mcg2bBabSDavg04vEnl13txkUW0/view?usp=sharing",
+  },
+
+  {
+    title: "Belmont Bistro",
+    category: "Social Media Hosting & Management",
+    description:
+      "Hosted and managed social media accounts for Belmont Bistro, creating engaging content and driving engagement.",
+    imageUrl: "./burger.png", // Replace with actual movie scene image if available
+    link: "https://www.tiktok.com/@belmontbistro/video/7516943186619616518?_r=1&_t=ZM-8xIkas4j3vK",
+  },
+  {
+    title: "Belmont Bistro",
+    category: "Social Media Hosting & Management",
+    description:
+      "Hosted and managed social media accounts for Belmont Bistro, creating engaging content and driving engagement.",
+    imageUrl: "./burger1.png", // Replace with actual movie scene image if available
+    link: "https://www.tiktok.com/@belmontbistro/video/7517943171314158853?_r=1&_t=ZM-8xIkas4j3vK",
+  },
+  {
+    title: "Belmont Bistro",
+    category: "Social Media Hosting & Management",
+    description:
+      "Hosted and managed social media accounts for Belmont Bistro, creating engaging content and driving engagement.",
+    imageUrl: "./burger2.png", // Replace with actual movie scene image if available
+    link: "https://www.tiktok.com/@belmontbistro/video/7516470165169556792?_r=1&_t=ZM-8xIkas4j3vK",
   },
 ];

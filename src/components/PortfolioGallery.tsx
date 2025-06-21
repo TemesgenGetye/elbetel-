@@ -55,6 +55,7 @@ const PortfolioGallery: React.FC = () => {
     "Digital Marketing And Content",
     "Video Editing",
     "HR Projects",
+    "Social Media Hosting & Management",
   ];
 
   return (
