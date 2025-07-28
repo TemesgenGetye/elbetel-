@@ -140,4 +140,13 @@ export const portfolioData: PortfolioItem[] = [
     imageUrl: "./burger2.png", // Replace with actual movie scene image if available
     link: "https://www.tiktok.com/@belmontbistro/video/7516470165169556792?_r=1&_t=ZM-8xIkas4j3vK",
   },
+
+  {
+    title: "Lula Machinaries",
+    category: "Social Media Hosting & Management",
+    description:
+      "Hosted and managed social media accounts for Lula Machinaries, creating engaging content and driving engagement.",
+    imageUrl: "./lula.png", // Replace with actual movie scene image if available
+    link: "https://www.tiktok.com/@lulamachinery1/video/7527939854299155718?_r=1&_t=ZM-8yLXfIq5hmX",
+  },
 ];
