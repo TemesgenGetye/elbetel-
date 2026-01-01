@@ -18,7 +18,7 @@ export const portfolioData: PortfolioItem[] = [
 
   {
   title: "Yetnot",
-  category: "Restaurant & Bar Discovery",
+  category: "Social Media Hosting & Management",
   description:
     "A digital food guide highlighting restaurants, cafés, and bars across Addis Ababa, helping people discover new places to eat, drink, and hang out.",
   imageUrl: "./yet2.png",
@@ -26,7 +26,7 @@ export const portfolioData: PortfolioItem[] = [
 },
   {
   title: "Yetnot",
-  category: "Food & Location Discovery",
+  category: "Social Media Hosting & Management",
   description:
     "A food location discovery platform that helps users find restaurants, cafés, and bars around Addis Ababa, showcasing popular spots and local favorites.",
   imageUrl: "./yet.png",
