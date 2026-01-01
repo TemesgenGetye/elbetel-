@@ -16,6 +16,15 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
+  title: "Yetnot",
+  category: "Food & Location Discovery",
+  description:
+    "A food location discovery platform that helps users find restaurants, cafés, and bars around Addis Ababa, showcasing popular spots and local favorites.",
+  imageUrl: "./yet.png",
+  link: "https://www.tiktok.com/@yetnot3/video/7588907494294949176?_r=1&_t=ZM-92FDlaE8oai", 
+},
+
+  {
     title: "PS Market Campaign – Video 1",
     category: "TikTok Videos",
     description:
